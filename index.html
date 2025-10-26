@@ -5,6 +5,10 @@
 <title>Glaubenssätze – Ergänzungs-Set (4 Sets)</title>
 <meta name="theme-color" content="#0ea5e9">
 <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-256.png">
+<link rel="apple-touch-icon" href="icon-256.png">
+<meta name="theme-color" content="#0ea5e9">
 <style>
 :root{--bg:#f7fafc;--fg:#111827;--muted:#6b7280;--card:#fff;--accent:#0ea5e9;--border:#e5e7eb}
 .dark{--bg:#0b1120;--fg:#e5e7eb;--muted:#9ca3af;--card:#111827;--accent:#38bdf8;--border:#1f2937}
@@ -183,6 +187,11 @@ function applyTheme(){const s=localStorage.getItem('gs-theme')||'auto'; const pd
 applyTheme();
 document.getElementById('darkBtn').addEventListener('click',()=>{const s=localStorage.getItem('gs-theme')||'auto'; const n=s==='light'?'dark':(s==='dark'?'auto':'light'); localStorage.setItem('gs-theme',n); applyTheme();});
 render();
+</script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./service-worker.js").catch(console.error);
+  }
 </script>
 </body>
 </html>
